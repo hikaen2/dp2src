@@ -39,7 +39,7 @@ public class Main {
             }
         };
 
-        // Executor‚ÉRunnable‚ğ“n‚µ‚ÄÀs
+        // Executorã«Runnableã‚’æ¸¡ã—ã¦å®Ÿè¡Œ
         executor.execute(runnable);
 
         Log.println("main:END");

@@ -2,14 +2,14 @@ public class Main {
     private static final int TASKS = 10;
     public static void main(String[] args) {
         for (int t = 0; t < TASKS; t++) {
-            // ƒƒO‚É‘‚«ž‚Þƒ^ƒXƒN
+            // ãƒ­ã‚°ã«æ›¸ãè¾¼ã‚€ã‚¿ã‚¹ã‚¯
             Runnable printTask = new Runnable() {
                 public void run() {
                     Log.println("Hello!");
                     Log.close();
                 }
             };
-            // ƒ^ƒXƒN‚ÌŽÀs
+            // ã‚¿ã‚¹ã‚¯ã®å®Ÿè¡Œ
             new Thread(printTask).start();
         }
     }

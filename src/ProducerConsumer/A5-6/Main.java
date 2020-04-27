@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        Table table = new Table(3);     // ƒP[ƒL‚ğ3ŒÂ‚Ü‚Å’u‚¯‚éƒe[ƒuƒ‹‚ğì‚é
+        Table table = new Table(3);     // ã‚±ãƒ¼ã‚­ã‚’3å€‹ã¾ã§ç½®ã‘ã‚‹ãƒ†ãƒ¼ãƒ–ãƒ«ã‚’ä½œã‚‹
         Thread[] threads = {
             new MakerThread("MakerThread-1", table, 31415),
             new MakerThread("MakerThread-2", table, 92653),
@@ -10,12 +10,12 @@ public class Main {
             new EaterThread("EaterThread-3", table, 38327),
         };
 
-        // ƒXƒŒƒbƒh‚Ì‹N“®
+        // ã‚¹ãƒ¬ãƒƒãƒ‰ã®èµ·å‹•
         for (int i = 0; i < threads.length; i++) {
             threads[i].start();
         }
 
-        // –ñ10•b‹x‚İ
+        // ç´„10ç§’ä¼‘ã¿
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {
@@ -23,7 +23,7 @@ public class Main {
 
         System.out.println("***** interrupt *****");
 
-        // ƒCƒ“ƒ^ƒ‰ƒvƒg
+        // ã‚¤ãƒ³ã‚¿ãƒ©ãƒ—ãƒˆ
         for (int i = 0; i < threads.length; i++) {
             threads[i].interrupt();
         }

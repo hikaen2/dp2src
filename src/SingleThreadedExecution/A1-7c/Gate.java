@@ -3,7 +3,7 @@ public class Gate {
     private String name = "Nobody";
     private String address = "Nowhere";
     private final Mutex mutex = new Mutex();
-    public void pass(String name, String address) { // synchronized�ł͂Ȃ�
+    public void pass(String name, String address) { // synchronizedではない
         mutex.lock();
         try {
             this.counter++;
@@ -14,7 +14,7 @@ public class Gate {
             mutex.unlock();
         }
     }
-    public String toString() { // synchronized�ł͂Ȃ�
+    public String toString() { // synchronizedではない
         String s = null;
         mutex.lock();
         try {

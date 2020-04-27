@@ -1,18 +1,18 @@
 public class ServiceThread extends GracefulThread {
     private int count = 0;
 
-    // ì‹Æ’†
+    // ä½œæ¥­ä¸­
     @Override
     protected void doWork() throws InterruptedException {
         System.out.print(".");
         Thread.sleep(100);
         count++;
         if (count >= 50) {
-            shutdownRequest();  // ©•ª‚ÅI—¹
+            shutdownRequest();  // è‡ªåˆ†ã§çµ‚äº†
         }
     }
 
-    // I—¹ˆ—
+    // çµ‚äº†å‡¦ç†
     @Override
     protected void doShutdown() {
         System.out.println("done.");

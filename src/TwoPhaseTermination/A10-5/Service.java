@@ -1,7 +1,7 @@
 public class Service {
     private static GracefulThread thread = null;
 
-    // ƒT[ƒrƒXÀsŠJn(Às’†‚È‚çbalk‚·‚é)
+    // ã‚µãƒ¼ãƒ“ã‚¹å®Ÿè¡Œé–‹å§‹(å®Ÿè¡Œä¸­ãªã‚‰balkã™ã‚‹)
     public synchronized static void service() {
         System.out.print("service");
         if (thread != null && thread.isAlive()) {
@@ -14,7 +14,7 @@ public class Service {
         thread.start();
     }
 
-    // ƒT[ƒrƒX’†~
+    // ã‚µãƒ¼ãƒ“ã‚¹ä¸­æ­¢
     public synchronized static void cancel() {
         if (thread != null) {
             System.out.println("cancel.");

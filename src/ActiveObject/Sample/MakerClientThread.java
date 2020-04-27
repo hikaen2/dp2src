@@ -12,7 +12,7 @@ public class MakerClientThread extends Thread {
     public void run() {
         try {
             for (int i = 0; true; i++) {
-                // –ß‚è’l‚Ì‚ ‚éŒÄ‚Ño‚µ
+                // æˆ»ã‚Šå€¤ã®ã‚ã‚‹å‘¼ã³å‡ºã—
                 Result<String> result = activeObject.makeString(i, fillchar);
                 Thread.sleep(10);
                 String value = result.getResultValue();

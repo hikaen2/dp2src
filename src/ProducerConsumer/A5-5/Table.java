@@ -1,8 +1,8 @@
 public class Table {
     private final String[] buffer;
-    private int tail;  // ŽŸ‚Éput‚·‚éêŠ
-    private int head;  // ŽŸ‚Étake‚·‚éêŠ
-    private int count; // buffer“à‚ÌƒP[ƒL”
+    private int tail;  // æ¬¡ã«putã™ã‚‹å ´æ‰€
+    private int head;  // æ¬¡ã«takeã™ã‚‹å ´æ‰€
+    private int count; // bufferå†…ã®ã‚±ãƒ¼ã‚­æ•°
     public Table(int count) {
         this.buffer = new String[count];
         this.head = 0;
@@ -10,7 +10,7 @@ public class Table {
         this.count = 0;
     }
     public synchronized void clear()  {
-        // ‚±‚Ìwhile•¶‚ÍŽæ‚èœ‚¢‚½ƒP[ƒL‚ð•\Ž¦‚·‚é‚½‚ß‚Ì‚à‚Ì‚Å‚ ‚èA‚È‚­‚Ä‚à‚æ‚¢B
+        // ã“ã®whileæ–‡ã¯å–ã‚Šé™¤ã„ãŸã‚±ãƒ¼ã‚­ã‚’è¡¨ç¤ºã™ã‚‹ãŸã‚ã®ã‚‚ã®ã§ã‚ã‚Šã€ãªãã¦ã‚‚ã‚ˆã„ã€‚
         while (count > 0) {
             String cake = buffer[head];
             System.out.println(Thread.currentThread().getName() + " clears " + cake);

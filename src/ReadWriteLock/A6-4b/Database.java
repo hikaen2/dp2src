@@ -4,25 +4,25 @@ import java.util.HashMap;
 public class Database<K,V> {
     private final Map<K,V> map = new HashMap<K,V>();
 
-    // ‚·‚×‚ÄƒNƒŠƒA‚·‚é
+    // ã™ã¹ã¦ã‚¯ãƒªã‚¢ã™ã‚‹
     public synchronized void clear() {
         verySlowly();
         map.clear();
     }
 
-    // key‚Évalue‚ğŠ„‚è“–‚Ä‚é
+    // keyã«valueã‚’å‰²ã‚Šå½“ã¦ã‚‹
     public synchronized void assign(K key, V value) {
         verySlowly();
         map.put(key, value);
     }
 
-    // key‚ÉŠ„‚è“–‚Ä‚½’l‚ğæ“¾‚·‚é
+    // keyã«å‰²ã‚Šå½“ã¦ãŸå€¤ã‚’å–å¾—ã™ã‚‹
     public synchronized V retrieve(K key) {
         slowly();
         return map.get(key);
     }
 
-    // ˆ—‚ÉŠÔ‚ª‚©‚©‚é‚±‚Æ‚ğƒVƒ~ƒ…ƒŒ[ƒg‚·‚é
+    // å‡¦ç†ã«æ™‚é–“ãŒã‹ã‹ã‚‹ã“ã¨ã‚’ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ãƒˆã™ã‚‹
     private void slowly() {
         try {
             Thread.sleep(50);
@@ -30,7 +30,7 @@ public class Database<K,V> {
         }
     }
 
-    // ˆ—‚É‚Æ‚Ä‚àŠÔ‚ª‚©‚©‚é‚±‚Æ‚ğƒVƒ~ƒ…ƒŒ[ƒg‚·‚é
+    // å‡¦ç†ã«ã¨ã¦ã‚‚æ™‚é–“ãŒã‹ã‹ã‚‹ã“ã¨ã‚’ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ãƒˆã™ã‚‹
     private void verySlowly() {
         try {
             Thread.sleep(500);

@@ -1,13 +1,13 @@
 public class CountupThread extends Thread {
-    // ƒJƒEƒ“ƒ^‚Ì’l
+    // ã‚«ã‚¦ãƒ³ã‚¿ã®å€¤
     private long counter = 0;
 
-    // I—¹—v‹
+    // çµ‚äº†è¦æ±‚
     public void shutdownRequest() {
         interrupt();
     }
 
-    // “®ì
+    // å‹•ä½œ
     public void run() {
         try {
             while (!isInterrupted()) {
@@ -19,14 +19,14 @@ public class CountupThread extends Thread {
         }
     }
 
-    // ì‹Æ
+    // ä½œæ¥­
     private void doWork() throws InterruptedException {
         counter++;
         System.out.println("doWork: counter = " + counter);
         Thread.sleep(500);
     }
 
-    // I—¹ˆ—
+    // çµ‚äº†å‡¦ç†
     private void doShutdown() {
         System.out.println("doShutdown: counter = " + counter);
     }

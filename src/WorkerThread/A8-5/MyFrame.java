@@ -27,14 +27,14 @@ public class MyFrame extends JFrame implements ActionListener {
     private void countUp() {
         System.out.println(Thread.currentThread().getName() + ":countUp:BEGIN");
 
-        // invokerThread‚Íw’èŠÔsleep‚µ‚½ŒãASwingUtilities.invokeLater‚ğŒÄ‚Ô
+        // invokerThreadã¯æŒ‡å®šæ™‚é–“sleepã—ãŸå¾Œã€SwingUtilities.invokeLaterã‚’å‘¼ã¶
         new Thread("invokerThread") {
             public void run() {
                 System.out.println(Thread.currentThread().getName() + ":invokerThread:BEGIN");
                 for (int i = 0; i < 10; i++) {
                     final String string = "" + i;
                     try {
-                        // executor‚ÍƒCƒxƒ“ƒgEƒfƒBƒXƒpƒbƒ`ƒ“ƒOEƒXƒŒƒbƒh‚©‚çŒÄ‚Î‚ê‚é
+                        // executorã¯ã‚¤ãƒ™ãƒ³ãƒˆãƒ»ãƒ‡ã‚£ã‚¹ãƒ‘ãƒƒãƒãƒ³ã‚°ãƒ»ã‚¹ãƒ¬ãƒƒãƒ‰ã‹ã‚‰å‘¼ã°ã‚Œã‚‹
                         final Runnable executor = new Runnable() {
                             public void run() {
                                 System.out.println(Thread.currentThread().getName() + ":executor:BEGIN:string = " + string);
@@ -43,7 +43,7 @@ public class MyFrame extends JFrame implements ActionListener {
                             }
                         };
 
-                        // executor‚ğƒCƒxƒ“ƒgEƒfƒBƒXƒpƒbƒ`ƒ“ƒOEƒXƒŒƒbƒh‚ÉŒÄ‚Ño‚³‚¹‚é
+                        // executorã‚’ã‚¤ãƒ™ãƒ³ãƒˆãƒ»ãƒ‡ã‚£ã‚¹ãƒ‘ãƒƒãƒãƒ³ã‚°ãƒ»ã‚¹ãƒ¬ãƒƒãƒ‰ã«å‘¼ã³å‡ºã•ã›ã‚‹
                         SwingUtilities.invokeLater(executor);
 
                         Thread.sleep(1000);

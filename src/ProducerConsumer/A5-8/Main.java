@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        Table table = new Table(3);     // ƒP[ƒL‚ğ3ŒÂ‚Ü‚Å’u‚¯‚éƒe[ƒuƒ‹‚ğì‚é
+        Table table = new Table(3);     // ã‚±ãƒ¼ã‚­ã‚’3å€‹ã¾ã§ç½®ã‘ã‚‹ãƒ†ãƒ¼ãƒ–ãƒ«ã‚’ä½œã‚‹
         new MakerThread("MakerThread-1", table, 31415).start();
         new MakerThread("MakerThread-2", table, 92653).start();
         new MakerThread("MakerThread-3", table, 58979).start();

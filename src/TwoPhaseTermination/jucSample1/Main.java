@@ -3,19 +3,19 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.CountDownLatch;
 
 public class Main {
-    private static final int TASKS = 10; // d–‚ÌŒÂ”
+    private static final int TASKS = 10; // ä»•äº‹ã®å€‹æ•°
 
     public static void main(String[] args) {
         System.out.println("BEGIN");
         ExecutorService service = Executors.newFixedThreadPool(5);
         CountDownLatch doneLatch = new CountDownLatch(TASKS);
         try {
-            // d–‚ğŠJn‚·‚é
+            // ä»•äº‹ã‚’é–‹å§‹ã™ã‚‹
             for (int t = 0; t < TASKS; t++) {
                 service.execute(new MyTask(doneLatch, t));
             }
             System.out.println("AWAIT");
-            // d–‚ÌI—¹‚ğ‘Ò‚Â
+            // ä»•äº‹ã®çµ‚äº†ã‚’å¾…ã¤
             doneLatch.await();
         } catch (InterruptedException e) {
         } finally {

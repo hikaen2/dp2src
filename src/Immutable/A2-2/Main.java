@@ -1,9 +1,9 @@
 public class Main {
     public static void main(String[] args) {
         String s = "BAT";
-        String t = s.replace('B', 'C'); // 'B'‚ğ'C'‚É’uŠ·
-        System.out.println("s = " + s); // replace‚ğÀs‚µ‚½Œã‚Ìs
-        System.out.println("t = " + t); // replace‚Ì–ß‚è’lt
+        String t = s.replace('B', 'C'); // 'B'ã‚’'C'ã«ç½®æ›
+        System.out.println("s = " + s); // replaceã‚’å®Ÿè¡Œã—ãŸå¾Œã®s
+        System.out.println("t = " + t); // replaceã®æˆ»ã‚Šå€¤t
         if (s == t) {
             System.out.println("s == t");
         } else {

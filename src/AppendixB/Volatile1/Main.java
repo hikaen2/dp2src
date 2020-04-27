@@ -17,10 +17,10 @@ public class Main {
     public static void main(String[] args) {
         Runner runner = new Runner();
 
-        // ƒXƒŒƒbƒh‚ğ‹N“®‚·‚é
+        // ã‚¹ãƒ¬ãƒƒãƒ‰ã‚’èµ·å‹•ã™ã‚‹
         runner.start();
 
-        // ƒXƒŒƒbƒh‚ğI—¹‚·‚é
+        // ã‚¹ãƒ¬ãƒƒãƒ‰ã‚’çµ‚äº†ã™ã‚‹
         runner.shutdown();
     }
 }

@@ -12,7 +12,7 @@ public class Database<K,V> {
     private final Lock readLock = lock.readLock();
     private final Lock writeLock = lock.writeLock();
 
-    // ‚·‚×‚ÄƒNƒŠƒA‚·‚é
+    // ã™ã¹ã¦ã‚¯ãƒªã‚¢ã™ã‚‹
     public void clear() {
         writeLock.lock();
         try {
@@ -23,7 +23,7 @@ public class Database<K,V> {
         }
     }
 
-    // key‚Évalue‚ğŠ„‚è“–‚Ä‚é
+    // keyã«valueã‚’å‰²ã‚Šå½“ã¦ã‚‹
     public void assign(K key, V value) {
         writeLock.lock();
         try {
@@ -34,7 +34,7 @@ public class Database<K,V> {
         }
     }
 
-    // key‚ÉŠ„‚è“–‚Ä‚½’l‚ğæ“¾‚·‚é
+    // keyã«å‰²ã‚Šå½“ã¦ãŸå€¤ã‚’å–å¾—ã™ã‚‹
     public V retrieve(K key) {
         readLock.lock();
         try {
@@ -45,7 +45,7 @@ public class Database<K,V> {
         }
     }
 
-    // ˆ—‚ÉŠÔ‚ª‚©‚©‚é‚±‚Æ‚ğƒVƒ~ƒ…ƒŒ[ƒg‚·‚é
+    // å‡¦ç†ã«æ™‚é–“ãŒã‹ã‹ã‚‹ã“ã¨ã‚’ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ãƒˆã™ã‚‹
     private void slowly() {
         try {
             Thread.sleep(50);
@@ -53,7 +53,7 @@ public class Database<K,V> {
         }
     }
 
-    // ˆ—‚É‚Æ‚Ä‚àŠÔ‚ª‚©‚©‚é‚±‚Æ‚ğƒVƒ~ƒ…ƒŒ[ƒg‚·‚é
+    // å‡¦ç†ã«ã¨ã¦ã‚‚æ™‚é–“ãŒã‹ã‹ã‚‹ã“ã¨ã‚’ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ãƒˆã™ã‚‹
     private void verySlowly() {
         try {
             Thread.sleep(500);

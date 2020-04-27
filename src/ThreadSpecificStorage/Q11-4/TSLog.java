@@ -5,7 +5,7 @@ import java.io.IOException;
 public class TSLog {
     private PrintWriter writer = null;
 
-    // writerƒtƒB[ƒ‹ƒh‚Ì‰Šú‰»
+    // writerãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®åˆæœŸåŒ–
     public TSLog(String filename) {
         try {
             writer = new PrintWriter(new FileWriter(filename));
@@ -14,12 +14,12 @@ public class TSLog {
         }
     }
 
-    // ƒƒO‚ğ‘‚­
+    // ãƒ­ã‚°ã‚’æ›¸ã
     public void println(String s) {
         writer.println(s);
     }
 
-    // ƒƒO‚ğ•Â‚¶‚é
+    // ãƒ­ã‚°ã‚’é–‰ã˜ã‚‹
     public void close() {
         writer.println("==== End of log ====");
         writer.close();

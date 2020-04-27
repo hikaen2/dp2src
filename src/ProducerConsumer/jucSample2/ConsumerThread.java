@@ -17,12 +17,12 @@ public class ConsumerThread extends Thread {
     public void run() {
         try {
             while (true) {
-                // ƒoƒbƒtƒ@‚ğŒğŠ·‚·‚é
+                // ãƒãƒƒãƒ•ã‚¡ã‚’äº¤æ›ã™ã‚‹
                 System.out.println(Thread.currentThread().getName() + ": BEFORE exchange");
                 buffer = exchanger.exchange(buffer);
                 System.out.println(Thread.currentThread().getName() + ": AFTER exchange");
 
-                // ƒoƒbƒtƒ@‚©‚ç•¶š‚ğæ‚èo‚·
+                // ãƒãƒƒãƒ•ã‚¡ã‹ã‚‰æ–‡å­—ã‚’å–ã‚Šå‡ºã™
                 for (int i = 0; i < buffer.length; i++) {
                     System.out.println(Thread.currentThread().getName() + ":  -> " + buffer[i]);
                     Thread.sleep(random.nextInt(1000));

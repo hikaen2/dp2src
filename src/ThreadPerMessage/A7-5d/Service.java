@@ -1,7 +1,7 @@
 public class Service {
     private static Thread worker = null;
     public static synchronized void service() {
-        // 実行中の処理があったらinterruptを使ってキャンセルする
+        // 螳溯｡御ｸｭ縺ｮ蜃ｦ逅�縺後≠縺｣縺溘ｉinterrupt繧剃ｽｿ縺｣縺ｦ繧ｭ繝｣繝ｳ繧ｻ繝ｫ縺吶ｋ
         if (worker != null && worker.isAlive()) {
             worker.interrupt();
             try {

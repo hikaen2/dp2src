@@ -18,13 +18,13 @@ public class ProducerThread extends Thread {
     public void run() {
         try {
             while (true) {
-                // ƒoƒbƒtƒ@‚É•¶š‚ğ‹l‚ß‚Ş
+                // ãƒãƒƒãƒ•ã‚¡ã«æ–‡å­—ã‚’è©°ã‚è¾¼ã‚€
                 for (int i = 0; i < buffer.length; i++) {
                     buffer[i] = nextChar();
                     System.out.println(Thread.currentThread().getName() + ": " + buffer[i] + " -> ");
                 }
 
-                // ƒoƒbƒtƒ@‚ğŒğŠ·‚·‚é
+                // ãƒãƒƒãƒ•ã‚¡ã‚’äº¤æ›ã™ã‚‹
                 System.out.println(Thread.currentThread().getName() + ": BEFORE exchange");
                 buffer = exchanger.exchange(buffer);
                 System.out.println(Thread.currentThread().getName() + ": AFTER exchange");
@@ -33,7 +33,7 @@ public class ProducerThread extends Thread {
         }
     }
 
-    // •¶š‚ğ¶Y‚·‚é
+    // æ–‡å­—ã‚’ç”Ÿç”£ã™ã‚‹
     private char nextChar() throws InterruptedException {
         char c = (char)('A' + index % 26);
         index++;

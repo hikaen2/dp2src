@@ -1,16 +1,16 @@
 public class Main {
     public static void main(String[] args) {
-        // ƒCƒ“ƒXƒ^ƒ“ƒXì¬
+        // ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ä½œæˆ
         UserInfo userinfo = new UserInfo("Alice", "Alaska");
 
-        // •\¦
+        // è¡¨ç¤º
         System.out.println("userinfo = " + userinfo);
 
-        // ó‘Ô‚ğ•ÏX
+        // çŠ¶æ…‹ã‚’å¤‰æ›´
         StringBuffer info = userinfo.getInfo();
-        info.replace(12, 17, "Bobby");  // 12ˆÈã17–¢–‚ª"Alice"‚ÌˆÊ’u
+        info.replace(12, 17, "Bobby");  // 12ä»¥ä¸Š17æœªæº€ãŒ"Alice"ã®ä½ç½®
 
-        // Ä“x•\¦
+        // å†åº¦è¡¨ç¤º
         System.out.println("userinfo = " + userinfo);
     }
 }

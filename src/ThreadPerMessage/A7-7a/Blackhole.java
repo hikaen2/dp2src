@@ -4,32 +4,32 @@ public class Blackhole {
         magic(obj);
         System.out.println("Step 2");
         synchronized (obj) {
-            System.out.println("Step 3 (never reached here)");  // ‚±‚±‚É‚Í‚±‚È‚¢
+            System.out.println("Step 3 (never reached here)");  // ã“ã“ã«ã¯ã“ãªã„
         }
     }
     public static void magic(final Object obj) {
-        // thread‚Íobj‚ÌƒƒbƒN‚ğæ‚Á‚Ä–³ŒÀƒ‹[ƒv‚·‚éƒXƒŒƒbƒh
-        // thread‚Ì–¼‘O‚ğƒK[ƒhğŒ‚Æ‚µ‚Äg‚¤
+        // threadã¯objã®ãƒ­ãƒƒã‚¯ã‚’å–ã£ã¦ç„¡é™ãƒ«ãƒ¼ãƒ—ã™ã‚‹ã‚¹ãƒ¬ãƒƒãƒ‰
+        // threadã®åå‰ã‚’ã‚¬ãƒ¼ãƒ‰æ¡ä»¶ã¨ã—ã¦ä½¿ã†
         Thread thread = new Thread() {      // inner class
             public void run() {
-                synchronized (obj) {        // ‚±‚±‚Åobj‚ÌƒƒbƒN‚ğæ‚é
+                synchronized (obj) {        // ã“ã“ã§objã®ãƒ­ãƒƒã‚¯ã‚’å–ã‚‹
                     synchronized (this) {
-                        this.setName("Locked"); // ƒK[ƒhğŒ‚Ì•Ï‰»
-                        this.notifyAll();       // obj‚ÌƒƒbƒN‚ğæ‚Á‚½‚±‚Æ‚ğ’Ê’m
+                        this.setName("Locked"); // ã‚¬ãƒ¼ãƒ‰æ¡ä»¶ã®å¤‰åŒ–
+                        this.notifyAll();       // objã®ãƒ­ãƒƒã‚¯ã‚’å–ã£ãŸã“ã¨ã‚’é€šçŸ¥
                     }
                     while (true) {
-                        // –³ŒÀƒ‹[ƒv
+                        // ç„¡é™ãƒ«ãƒ¼ãƒ—
                     }
                 }
             }
         };
         synchronized (thread) {
             thread.setName("");
-            thread.start();         // ƒXƒŒƒbƒh‚Ì‹N“®
-            // Guarded Suspensionƒpƒ^[ƒ“
+            thread.start();         // ã‚¹ãƒ¬ãƒƒãƒ‰ã®èµ·å‹•
+            // Guarded Suspensionãƒ‘ã‚¿ãƒ¼ãƒ³
             while (thread.getName().equals("")) {
                 try {
-                    thread.wait();  // V‚µ‚¢ƒXƒŒƒbƒh‚ªobj‚ÌƒƒbƒN‚ğæ‚é‚Ì‚ğ‘Ò‚Â
+                    thread.wait();  // æ–°ã—ã„ã‚¹ãƒ¬ãƒƒãƒ‰ãŒobjã®ãƒ­ãƒƒã‚¯ã‚’å–ã‚‹ã®ã‚’å¾…ã¤
                 } catch (InterruptedException e) {
                 }
             }

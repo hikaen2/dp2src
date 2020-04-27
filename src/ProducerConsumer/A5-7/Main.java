@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        // Host‚Ìd‚¢ˆ—‚ğÀs‚·‚éƒXƒŒƒbƒh
+        // Hostã®é‡ã„å‡¦ç†ã‚’å®Ÿè¡Œã™ã‚‹ã‚¹ãƒ¬ãƒƒãƒ‰
         Thread executor = new Thread() {
             public void run() {
                 System.out.println("Host.execute BEGIN");
@@ -13,16 +13,16 @@ public class Main {
             }
         };
 
-        // ‹N“®‚·‚é
+        // èµ·å‹•ã™ã‚‹
         executor.start();
 
-        // –ñ15•b‹x‚Ş
+        // ç´„15ç§’ä¼‘ã‚€
         try {
             Thread.sleep(15000);
         } catch (InterruptedException e) {
         }
 
-        // ƒLƒƒƒ“ƒZƒ‹Às
+        // ã‚­ãƒ£ãƒ³ã‚»ãƒ«å®Ÿè¡Œ
         System.out.println("***** interrupt *****");
         executor.interrupt();
     }

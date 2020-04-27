@@ -1,9 +1,9 @@
 public class Channel {
     private static final int MAX_REQUEST = 100;
     private final Request[] requestQueue;
-    private int tail;  // Ÿ‚ÉputRequest‚·‚éêŠ
-    private int head;  // Ÿ‚ÉtakeRequest‚·‚éêŠ
-    private int count; // Request‚Ì”
+    private int tail;  // æ¬¡ã«putRequestã™ã‚‹å ´æ‰€
+    private int head;  // æ¬¡ã«takeRequestã™ã‚‹å ´æ‰€
+    private int count; // Requestã®æ•°
 
     private final WorkerThread[] threadPool;
 

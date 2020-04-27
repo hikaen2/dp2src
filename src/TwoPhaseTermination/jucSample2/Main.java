@@ -4,33 +4,33 @@ import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.CountDownLatch;
 
 public class Main {
-    private static final int THREADS = 3; // ƒXƒŒƒbƒh‚ÌŒÂ”
+    private static final int THREADS = 3; // ã‚¹ãƒ¬ãƒƒãƒ‰ã®å€‹æ•°
 
     public static void main(String[] args) {
         System.out.println("BEGIN");
 
-        // d–‚ğÀs‚·‚éƒXƒŒƒbƒh‚ğ’ñ‹Ÿ‚·‚éExecutorService
+        // ä»•äº‹ã‚’å®Ÿè¡Œã™ã‚‹ã‚¹ãƒ¬ãƒƒãƒ‰ã‚’æä¾›ã™ã‚‹ExecutorService
         ExecutorService service = Executors.newFixedThreadPool(THREADS);
 
-        // ƒoƒŠƒA‚ª‰ğœ‚³‚ê‚é‚Æ‚«‚ÌƒAƒNƒVƒ‡ƒ“
+        // ãƒãƒªã‚¢ãŒè§£é™¤ã•ã‚Œã‚‹ã¨ãã®ã‚¢ã‚¯ã‚·ãƒ§ãƒ³
         Runnable barrierAction = new Runnable() {
             public void run() {
                 System.out.println("Barrier Action!");
             }
         };
 
-        // ƒtƒF[ƒY‚ğ‡‚í‚¹‚éCyclicBarrier
+        // ãƒ•ã‚§ãƒ¼ã‚ºã‚’åˆã‚ã›ã‚‹CyclicBarrier
         CyclicBarrier phaseBarrier = new CyclicBarrier(THREADS, barrierAction);
 
-        // d–‚ÌI—¹‚ğ’²‚×‚éCountDownLatch
+        // ä»•äº‹ã®çµ‚äº†ã‚’èª¿ã¹ã‚‹CountDownLatch
         CountDownLatch doneLatch = new CountDownLatch(THREADS);
 
         try {
-            // d–‚ğŠJn‚·‚é
+            // ä»•äº‹ã‚’é–‹å§‹ã™ã‚‹
             for (int t = 0; t < THREADS; t++) {
                 service.execute(new MyTask(phaseBarrier, doneLatch, t));
             }
-            // d–‚ÌI—¹‚ğ‘Ò‚Â
+            // ä»•äº‹ã®çµ‚äº†ã‚’å¾…ã¤
             System.out.println("AWAIT");
             doneLatch.await();
         } catch (InterruptedException e) {

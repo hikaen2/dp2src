@@ -10,7 +10,7 @@ public class Main {
             new ClientThread("Bobby", executorService).start();
             new ClientThread("Chris", executorService).start();
 
-            // –ñ5•b‘Ò‚Â
+            // ç´„5ç§’å¾…ã¤
             Thread.sleep(5000);
         } catch (InterruptedException e) {
         } finally {

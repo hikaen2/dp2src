@@ -9,4 +9,4 @@ public final class Point {
         x += dx;
         y += dy;
     }
-�i�����܂œǂ񂾁j
+（ここまで読んだ）

@@ -2,7 +2,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("main:BEGIN");
 
-        // (1) ƒLƒƒƒbƒ`‚³‚ê‚È‚¢—áŠO‚Ìƒnƒ“ƒhƒ‰‚ğİ’è‚·‚é
+        // (1) ã‚­ãƒ£ãƒƒãƒã•ã‚Œãªã„ä¾‹å¤–ã®ãƒãƒ³ãƒ‰ãƒ©ã‚’è¨­å®šã™ã‚‹
         Thread.setDefaultUncaughtExceptionHandler(
             new Thread.UncaughtExceptionHandler() {
                 public void uncaughtException(Thread thread, Throwable exception) {
@@ -16,7 +16,7 @@ public class Main {
             }
         );
 
-        // (2) ƒVƒƒƒbƒgƒ_ƒEƒ“EƒtƒbƒN‚ğİ’è‚·‚é
+        // (2) ã‚·ãƒ£ãƒƒãƒˆãƒ€ã‚¦ãƒ³ãƒ»ãƒ•ãƒƒã‚¯ã‚’è¨­å®šã™ã‚‹
         Runtime.getRuntime().addShutdownHook(
             new Thread() {
                 public void run() {
@@ -28,7 +28,7 @@ public class Main {
             }
         );
 
-        // (3) –ñ3•bŒã‚Éu0‚É‚æ‚é®”‚ÌŠ„‚èZv‚ğs‚¤ƒXƒŒƒbƒh‚ğ‹N“®‚·‚é
+        // (3) ç´„3ç§’å¾Œã«ã€Œ0ã«ã‚ˆã‚‹æ•´æ•°ã®å‰²ã‚Šç®—ã€ã‚’è¡Œã†ã‚¹ãƒ¬ãƒƒãƒ‰ã‚’èµ·å‹•ã™ã‚‹
         new Thread("MyThread") {
             public void run() {
                 System.out.println("MyThread:BEGIN");
@@ -41,10 +41,10 @@ public class Main {
 
                 System.out.println("MyThread:DIVIDE");
 
-                // u0‚É‚æ‚é®”‚ÌŠ„‚èZv
+                // ã€Œ0ã«ã‚ˆã‚‹æ•´æ•°ã®å‰²ã‚Šç®—ã€
                 int x = 1 / 0;
 
-                // ‚±‚±‚É‚Í—ˆ‚È‚¢
+                // ã“ã“ã«ã¯æ¥ãªã„
                 System.out.println("MyThread:END");
             }
         }.start();

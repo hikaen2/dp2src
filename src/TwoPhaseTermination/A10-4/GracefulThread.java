@@ -1,19 +1,19 @@
 public class GracefulThread extends Thread {
-    // I—¹—v‹‚ªo‚³‚ê‚½‚çtrue
+    // çµ‚äº†è¦æ±‚ãŒå‡ºã•ã‚ŒãŸã‚‰true
     private volatile boolean shutdownRequested = false;
 
-    // I—¹—v‹
+    // çµ‚äº†è¦æ±‚
     public final void shutdownRequest() {
         shutdownRequested = true;
         interrupt();
     }
 
-    // I—¹—v‹‚ªo‚³‚ê‚½‚©‚Ç‚¤‚©‚ÌƒeƒXƒg
+    // çµ‚äº†è¦æ±‚ãŒå‡ºã•ã‚ŒãŸã‹ã©ã†ã‹ã®ãƒ†ã‚¹ãƒˆ
     public final boolean isShutdownRequested() {
         return shutdownRequested;
     }
 
-    // “®ì
+    // å‹•ä½œ
     public final void run() {
         try {
             while (!isShutdownRequested()) {
@@ -25,11 +25,11 @@ public class GracefulThread extends Thread {
         }
     }
 
-    // ì‹Æ
+    // ä½œæ¥­
     protected void doWork() throws InterruptedException {
     }
 
-    // I—¹ˆ—
+    // çµ‚äº†å‡¦ç†
     protected void doShutdown() {
     }
 }

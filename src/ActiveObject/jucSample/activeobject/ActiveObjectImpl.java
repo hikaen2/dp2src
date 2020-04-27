@@ -5,18 +5,18 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Future;
 
-// ActiveObjectƒCƒ“ƒ^ƒtƒF[ƒX‚ÌÀ‘•ƒNƒ‰ƒX
+// ActiveObjectã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹ã®å®Ÿè£…ã‚¯ãƒ©ã‚¹
 class ActiveObjectImpl implements ActiveObject {
     private final ExecutorService service = Executors.newSingleThreadExecutor();
 
-    // ƒT[ƒrƒX‚ÌI—¹
+    // ã‚µãƒ¼ãƒ“ã‚¹ã®çµ‚äº†
     public void shutdown() {
         service.shutdown();
     }
 
-    // –ß‚è’l‚Ì‚ ‚éŒÄ‚Ño‚µ
+    // æˆ»ã‚Šå€¤ã®ã‚ã‚‹å‘¼ã³å‡ºã—
     public Future<String> makeString(final int count, final char fillchar) {
-        // ƒŠƒNƒGƒXƒg
+        // ãƒªã‚¯ã‚¨ã‚¹ãƒˆ
         class MakeStringRequest implements Callable<String> {
             public String call() {
                 char[] buffer = new char[count];
@@ -30,13 +30,13 @@ class ActiveObjectImpl implements ActiveObject {
                 return new String(buffer);
             }
         }
-        // ƒŠƒNƒGƒXƒg‚Ì”­s
+        // ãƒªã‚¯ã‚¨ã‚¹ãƒˆã®ç™ºè¡Œ
         return service.submit(new MakeStringRequest());
     }
 
-    // –ß‚è’l‚Ì‚È‚¢ŒÄ‚Ño‚µ
+    // æˆ»ã‚Šå€¤ã®ãªã„å‘¼ã³å‡ºã—
     public void displayString(final String string) {
-        // ƒŠƒNƒGƒXƒg
+        // ãƒªã‚¯ã‚¨ã‚¹ãƒˆ
         class DisplayStringRequest implements Runnable {
             public void run() {
                 try {
@@ -46,7 +46,7 @@ class ActiveObjectImpl implements ActiveObject {
                 }
             }
         }
-        // ƒŠƒNƒGƒXƒg‚Ì”­s
+        // ãƒªã‚¯ã‚¨ã‚¹ãƒˆã®ç™ºè¡Œ
         service.execute(new DisplayStringRequest());
     }
 }

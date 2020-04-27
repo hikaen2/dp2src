@@ -10,7 +10,7 @@ public class DisplayClientThread extends Thread {
     public void run() {
         try {
             for (int i = 0; true; i++) {
-                // �߂�l�̂Ȃ��Ăяo��
+                // 戻り値のない呼び出し
                 String string = Thread.currentThread().getName() + " " + i;
                 activeObject.displayString(string);
                 Thread.sleep(200);

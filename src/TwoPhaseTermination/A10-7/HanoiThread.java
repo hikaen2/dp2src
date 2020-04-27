@@ -1,22 +1,22 @@
 public class HanoiThread extends Thread {
-    // I—¹—v‹‚ªo‚³‚ê‚½‚çtrue
+    // çµ‚äº†è¦æ±‚ãŒå‡ºã•ã‚ŒãŸã‚‰true
     private volatile boolean shutdownRequested = false;
-    // I—¹—v‹‚ªo‚³‚ê‚½
+    // çµ‚äº†è¦æ±‚ãŒå‡ºã•ã‚ŒãŸæ™‚åˆ»
     private volatile long requestedTimeMillis = 0;
 
-    // I—¹—v‹
+    // çµ‚äº†è¦æ±‚
     public void shutdownRequest() {
         requestedTimeMillis = System.currentTimeMillis();
         shutdownRequested = true;
         interrupt();
     }
 
-    // I—¹—v‹‚ªo‚³‚ê‚½‚©‚Ç‚¤‚©‚ÌƒeƒXƒg
+    // çµ‚äº†è¦æ±‚ãŒå‡ºã•ã‚ŒãŸã‹ã©ã†ã‹ã®ãƒ†ã‚¹ãƒˆ
     public boolean isShutdownRequested() {
         return shutdownRequested;
     }
 
-    // “®ì
+    // å‹•ä½œ
     public void run() {
         try {
             for (int level = 0; !isShutdownRequested(); level++) {
@@ -30,7 +30,7 @@ public class HanoiThread extends Thread {
         }
     }
 
-    // ì‹Æ
+    // ä½œæ¥­
     private void doWork(int level, char posA, char posB, char posC) throws InterruptedException {
         if (level > 0) {
             if (isShutdownRequested()) {
@@ -42,7 +42,7 @@ public class HanoiThread extends Thread {
         }
     }
 
-    // I—¹ˆ—
+    // çµ‚äº†å‡¦ç†
     private void doShutdown() {
         long time = System.currentTimeMillis() - requestedTimeMillis;
         System.out.println("doShutdown: Latency = " + time + " msec.");

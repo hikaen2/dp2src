@@ -1,21 +1,21 @@
 public class Log {
     private static final ThreadLocal<TSLog> tsLogCollection = new ThreadLocal<TSLog>();
 
-    // ƒƒO‚ğ‘‚­
+    // ãƒ­ã‚°ã‚’æ›¸ã
     public static void println(String s) {
         getTSLog().println(s);
     }
 
-    // ƒƒO‚ğ•Â‚¶‚é
+    // ãƒ­ã‚°ã‚’é–‰ã˜ã‚‹
     public static void close() {
         getTSLog().close();
     }
 
-    // ƒXƒŒƒbƒhŒÅ—L‚ÌƒƒO‚ğ“¾‚é
+    // ã‚¹ãƒ¬ãƒƒãƒ‰å›ºæœ‰ã®ãƒ­ã‚°ã‚’å¾—ã‚‹
     private static TSLog getTSLog() {
         TSLog tsLog = tsLogCollection.get();
 
-        // ‚»‚ÌƒXƒŒƒbƒh‚©‚ç‚ÌŒÄ‚Ño‚µ‚ª‚Í‚¶‚ß‚Ä‚È‚çAV‹Kì¬‚µ‚Ä“o˜^‚·‚é
+        // ãã®ã‚¹ãƒ¬ãƒƒãƒ‰ã‹ã‚‰ã®å‘¼ã³å‡ºã—ãŒã¯ã˜ã‚ã¦ãªã‚‰ã€æ–°è¦ä½œæˆã—ã¦ç™»éŒ²ã™ã‚‹
         if (tsLog == null) {
             tsLog = new TSLog(Thread.currentThread().getName() + "-log.txt");
             tsLogCollection.set(tsLog);
@@ -25,11 +25,11 @@ public class Log {
         return tsLog;
     }
 
-    // ƒXƒŒƒbƒh‚ÌI—¹‚ğ‘Ò‚ÂƒXƒŒƒbƒh‚ğ‹N“®‚·‚é
+    // ã‚¹ãƒ¬ãƒƒãƒ‰ã®çµ‚äº†ã‚’å¾…ã¤ã‚¹ãƒ¬ãƒƒãƒ‰ã‚’èµ·å‹•ã™ã‚‹
     private static void startWatcher(final TSLog tsLog) {
-        // I—¹‚ğŠÄ‹‚³‚ê‚é•û‚ÌƒXƒŒƒbƒh
+        // çµ‚äº†ã‚’ç›£è¦–ã•ã‚Œã‚‹æ–¹ã®ã‚¹ãƒ¬ãƒƒãƒ‰
         final Thread target = Thread.currentThread();
-        // target‚ğŠÄ‹‚·‚éƒXƒŒƒbƒh
+        // targetã‚’ç›£è¦–ã™ã‚‹ã‚¹ãƒ¬ãƒƒãƒ‰
         final Thread watcher = new Thread() {
             public void run() {
                 System.out.println("startWatcher for " + target.getName() + " BEGIN");
@@ -41,7 +41,7 @@ public class Log {
                 System.out.println("startWatcher for " + target.getName() + " END");
             }
         };
-        // ŠÄ‹‚ÌŠJn
+        // ç›£è¦–ã®é–‹å§‹
         watcher.start();
     }
 }

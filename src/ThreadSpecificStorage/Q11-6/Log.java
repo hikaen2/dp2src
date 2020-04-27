@@ -1,21 +1,21 @@
 public class Log {
     private static final ThreadLocal<TSLog> tsLogCollection = new ThreadLocal<TSLog>();
 
-    // ƒƒO‚ğ‘‚­
+    // ãƒ­ã‚°ã‚’æ›¸ã
     public static void println(String s) {
         getTSLog().println(s);
     }
 
-    // ƒƒO‚ğ•Â‚¶‚é
+    // ãƒ­ã‚°ã‚’é–‰ã˜ã‚‹
     public static void close() {
         getTSLog().close();
     }
 
-    // ƒXƒŒƒbƒhŒÅ—L‚ÌƒƒO‚ğ“¾‚é
+    // ã‚¹ãƒ¬ãƒƒãƒ‰å›ºæœ‰ã®ãƒ­ã‚°ã‚’å¾—ã‚‹
     private static TSLog getTSLog() {
         TSLog tsLog = tsLogCollection.get();
 
-        // ‚»‚ÌƒXƒŒƒbƒh‚©‚ç‚ÌŒÄ‚Ño‚µ‚ª‚Í‚¶‚ß‚Ä‚È‚çAV‹Kì¬‚µ‚Ä“o˜^‚·‚é
+        // ãã®ã‚¹ãƒ¬ãƒƒãƒ‰ã‹ã‚‰ã®å‘¼ã³å‡ºã—ãŒã¯ã˜ã‚ã¦ãªã‚‰ã€æ–°è¦ä½œæˆã—ã¦ç™»éŒ²ã™ã‚‹
         if (tsLog == null) {
             tsLog = new TSLog(Thread.currentThread().getName() + "-log.txt");
             tsLogCollection.set(tsLog);

@@ -3,9 +3,9 @@ package activeobject;
 class ActivationQueue {
     private static final int MAX_METHOD_REQUEST = 100;
     private final MethodRequest[] requestQueue;
-    private int tail;  // Ÿ‚ÉputRequest‚·‚éêŠ
-    private int head;  // Ÿ‚ÉtakeRequest‚·‚éêŠ
-    private int count; // MethodRequest‚Ì”
+    private int tail;  // æ¬¡ã«putRequestã™ã‚‹å ´æ‰€
+    private int head;  // æ¬¡ã«takeRequestã™ã‚‹å ´æ‰€
+    private int count; // MethodRequestã®æ•°
 
     public ActivationQueue() {
         this.requestQueue = new MethodRequest[MAX_METHOD_REQUEST];

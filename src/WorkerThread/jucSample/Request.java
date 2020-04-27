@@ -1,8 +1,8 @@
 import java.util.Random;
 
 public class Request implements Runnable {
-    private final String name; // 依頼者
-    private final int number;  // リクエストの番号
+    private final String name; // 萓晞ｼ閠�
+    private final int number;  // 繝ｪ繧ｯ繧ｨ繧ｹ繝医�ｮ逡ｪ蜿ｷ
     private static final Random random = new Random();
     public Request(String name, int number) {
         this.name = name;

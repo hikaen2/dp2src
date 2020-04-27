@@ -3,9 +3,9 @@ import java.io.FileWriter;
 import java.io.Writer;
 
 public class Data {
-    private final String filename;  // •Û‘¶‚·‚éƒtƒ@ƒCƒ‹‚Ì–¼‘O
-    private String content;         // ƒf[ƒ^‚Ì“à—e
-    private boolean changed;        // •ÏX‚µ‚½“à—e‚ª•Û‘¶‚³‚ê‚Ä‚¢‚È‚¢‚È‚çtrue
+    private final String filename;  // ä¿å­˜ã™ã‚‹ãƒ•ã‚¡ã‚¤ãƒ«ã®åå‰
+    private String content;         // ãƒ‡ãƒ¼ã‚¿ã®å†…å®¹
+    private boolean changed;        // å¤‰æ›´ã—ãŸå†…å®¹ãŒä¿å­˜ã•ã‚Œã¦ã„ãªã„ãªã‚‰true
 
     public Data(String filename, String content) {
         this.filename = filename;
@@ -13,13 +13,13 @@ public class Data {
         this.changed = true;
     }
 
-    // ƒf[ƒ^‚Ì“à—e‚ğ‘‚«Š·‚¦‚é
+    // ãƒ‡ãƒ¼ã‚¿ã®å†…å®¹ã‚’æ›¸ãæ›ãˆã‚‹
     public synchronized void change(String newContent) {
         content = newContent;
         changed = true;
     }
 
-    // ƒf[ƒ^‚Ì“à—e‚ª•ÏX‚³‚ê‚Ä‚¢‚½‚çƒtƒ@ƒCƒ‹‚É•Û‘¶‚·‚é
+    // ãƒ‡ãƒ¼ã‚¿ã®å†…å®¹ãŒå¤‰æ›´ã•ã‚Œã¦ã„ãŸã‚‰ãƒ•ã‚¡ã‚¤ãƒ«ã«ä¿å­˜ã™ã‚‹
     public synchronized void save() throws IOException {
         if (!changed) {
             System.out.println(Thread.currentThread().getName() + " balks");
@@ -29,7 +29,7 @@ public class Data {
         changed = false;
     }
 
-    // ƒf[ƒ^‚Ì“à—e‚ğÀÛ‚Éƒtƒ@ƒCƒ‹‚É•Û‘¶‚·‚é
+    // ãƒ‡ãƒ¼ã‚¿ã®å†…å®¹ã‚’å®Ÿéš›ã«ãƒ•ã‚¡ã‚¤ãƒ«ã«ä¿å­˜ã™ã‚‹
     private void doSave() throws IOException {
         System.out.println(Thread.currentThread().getName() + " calls doSave, content = " + content);
         Writer writer = new FileWriter(filename);

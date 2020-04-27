@@ -21,7 +21,7 @@ public class Main {
         System.out.println("Elapsed time = " + (end - start) + "msec.");
     }
 
-    // filename‚Æ‚¢‚¤–¼‘O‚Ìƒtƒ@ƒCƒ‹‚Écontent‚Ì’†g‚ğ‘‚«o‚·
+    // filenameã¨ã„ã†åå‰ã®ãƒ•ã‚¡ã‚¤ãƒ«ã«contentã®ä¸­èº«ã‚’æ›¸ãå‡ºã™
     private static void saveToFile(String filename, Content content) {
         byte[] bytes = content.getBytes();
         try {

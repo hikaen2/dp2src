@@ -1,22 +1,22 @@
 class Something {
-    // final‚ÈƒCƒ“ƒXƒ^ƒ“ƒXƒtƒB[ƒ‹ƒh
+    // finalãªã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰
     private final int x;
-    // ƒNƒ‰ƒXƒtƒB[ƒ‹ƒh
+    // ã‚¯ãƒ©ã‚¹ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰
     private static Something last = null;
 
-    // ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+    // ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
     private Something() {
-        // finalƒtƒB[ƒ‹ƒh‚ğ–¾¦“I‚É‰Šú‰»‚·‚é
+        // finalãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã‚’æ˜ç¤ºçš„ã«åˆæœŸåŒ–ã™ã‚‹
         x = 123;
     }
 
-    // new‚Å“¾‚ç‚ê‚½ƒCƒ“ƒXƒ^ƒ“ƒX‚ğlast‚Ö‘ã“ü‚·‚é
+    // newã§å¾—ã‚‰ã‚ŒãŸã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’lastã¸ä»£å…¥ã™ã‚‹
     public static Something create() {
         last = new Something();
         return last;
     }
 
-    // lastŒo—R‚ÅfinalƒtƒB[ƒ‹ƒh‚Ì’l‚ğ•\¦‚·‚é
+    // lastçµŒç”±ã§finalãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®å€¤ã‚’è¡¨ç¤ºã™ã‚‹
     public static void print() {
         if (last != null) {
             System.out.println(last.x);
@@ -26,14 +26,14 @@ class Something {
 
 public class Main {
     public static void main(String[] args) {
-        // ƒXƒŒƒbƒhA
+        // ã‚¹ãƒ¬ãƒƒãƒ‰A
         new Thread() {
             public void run() {
                 Something.create();
             }
         }.start();
 
-        // ƒXƒŒƒbƒhB
+        // ã‚¹ãƒ¬ãƒƒãƒ‰B
         new Thread() {
             public void run() {
                 Something.print();

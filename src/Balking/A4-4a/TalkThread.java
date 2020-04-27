@@ -9,11 +9,11 @@ public class TalkThread extends Thread {
     public void run() {
         System.out.println(Thread.currentThread().getName() + ":BEGIN");
         for (int i = 0; i < 20; i++) {
-            // ‘ŠŽè‚©‚ç‚ÌƒŠƒNƒGƒXƒg‚ð‚à‚ç‚¤
+            // ç›¸æ‰‹ã‹ã‚‰ã®ãƒªã‚¯ã‚¨ã‚¹ãƒˆã‚’ã‚‚ã‚‰ã†
             Request request1 = input.getRequest();
             System.out.println(Thread.currentThread().getName() + " gets  " + request1);
 
-            // Š´’Q•„(!)‚ð1ŒÂ‚Â‚¯‚Ä‘ŠŽè‚É•Ô‚·
+            // æ„Ÿå˜†ç¬¦(!)ã‚’1å€‹ã¤ã‘ã¦ç›¸æ‰‹ã«è¿”ã™
             Request request2 = new Request(request1.getName() + "!");
             System.out.println(Thread.currentThread().getName() + " puts  " + request2);
             output.putRequest(request2);

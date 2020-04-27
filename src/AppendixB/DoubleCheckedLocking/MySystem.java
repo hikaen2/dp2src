@@ -1,4 +1,4 @@
-// ~³‚µ‚­“®ì‚·‚é‚±‚Æ‚Í•ÛØ‚³‚ê‚È‚¢
+// Ã—æ­£ã—ãå‹•ä½œã™ã‚‹ã“ã¨ã¯ä¿è¨¼ã•ã‚Œãªã„
 import java.util.Date;
 
 public class MySystem {
@@ -10,12 +10,12 @@ public class MySystem {
         return date;
     }
     public static MySystem getInstance() {
-        if (instance == null) {                 // (a) 1‰ñ–Ú‚Ìtest
-            synchronized (MySystem.class) {     // (b) synchronizedƒuƒƒbƒN‚É“ü‚é
-                if (instance == null) {         // (c) 2‰ñ–Ú‚Ìtest
+        if (instance == null) {                 // (a) 1å›ç›®ã®test
+            synchronized (MySystem.class) {     // (b) synchronizedãƒ–ãƒ­ãƒƒã‚¯ã«å…¥ã‚‹
+                if (instance == null) {         // (c) 2å›ç›®ã®test
                     instance = new MySystem();  // (d) set
                 }
-            }                                   // (e) synchronizedƒuƒƒbƒN‚©‚ço‚é
+            }                                   // (e) synchronizedãƒ–ãƒ­ãƒƒã‚¯ã‹ã‚‰å‡ºã‚‹
         }
         return instance;                        // (f)
     }

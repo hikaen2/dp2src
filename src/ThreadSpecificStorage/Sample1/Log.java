@@ -5,7 +5,7 @@ import java.io.IOException;
 public class Log {
     private static PrintWriter writer = null;
 
-    // writerƒtƒB[ƒ‹ƒh‚Ì‰Šú‰»
+    // writerãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®åˆæœŸåŒ–
     static {
         try {
             writer = new PrintWriter(new FileWriter("log.txt"));
@@ -14,12 +14,12 @@ public class Log {
         }
     }
 
-    // ƒƒO‚ğ‘‚­
+    // ãƒ­ã‚°ã‚’æ›¸ã
     public static void println(String s) {
         writer.println(s);
     }
 
-    // ƒƒO‚ğ•Â‚¶‚é
+    // ãƒ­ã‚°ã‚’é–‰ã˜ã‚‹
     public static void close() {
         writer.println("==== End of log ====");
         writer.close();

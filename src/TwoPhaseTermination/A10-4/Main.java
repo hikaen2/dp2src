@@ -2,20 +2,20 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("main: BEGIN");
         try {
-            // ƒXƒŒƒbƒh‚Ì‹N“®
+            // ã‚¹ãƒ¬ãƒƒãƒ‰ã®èµ·å‹•
             CountupThread t = new CountupThread();
             t.start();
 
-            // ­‚µŠÔ‚ğ‚ ‚¯‚é
+            // å°‘ã—æ™‚é–“ã‚’ã‚ã‘ã‚‹
             Thread.sleep(10000);
 
-            // ƒXƒŒƒbƒh‚ÌI—¹—v‹
+            // ã‚¹ãƒ¬ãƒƒãƒ‰ã®çµ‚äº†è¦æ±‚
             System.out.println("main: shutdownRequest");
             t.shutdownRequest();
 
             System.out.println("main: join");
 
-            // ƒXƒŒƒbƒh‚ÌI—¹‚ğ‘Ò‚Â
+            // ã‚¹ãƒ¬ãƒƒãƒ‰ã®çµ‚äº†ã‚’å¾…ã¤
             t.join();
         } catch (InterruptedException e) {
             e.printStackTrace();

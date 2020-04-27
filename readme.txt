@@ -1,18 +1,18 @@
-�w���������Java����Ŋw�ԃf�U�C���p�^�[������}���`�X���b�h�ҁx����_��
-�\�t�g�o���N�N���G�C�e�B�u(��)��
+『増補改訂版Java言語で学ぶデザインパターン入門マルチスレッド編』結城浩著
+ソフトバンククリエイティブ(株)刊
 ISBN4-7973-3162-3
 http://www.hyuki.com/dp/dp2.html
 hyuki@hyuki.com
 
-���͂��߂�
+■はじめに
 
-���̃A�[�J�C�u�ɂ́A
-���Ёw���������Java����Ŋw�ԃf�U�C���p�^�[������@�}���`�X���b�h�ҁx��
-�T���v���v���O�����Ȃǂ��i�[����Ă��܂��B
+このアーカイブには、
+書籍『増補改訂版Java言語で学ぶデザインパターン入門　マルチスレッド編』の
+サンプルプログラムなどが格納されています。
 
-���T���v���v���O�����̃f�B���N�g���\��
+■サンプルプログラムのディレクトリ構造
 
-�T���v���v���O�����̃f�B���N�g���\���́A�ȉ��̂悤�ɂȂ��Ă��܂��B
+サンプルプログラムのディレクトリ構造は、以下のようになっています。
 
 
     src
@@ -47,19 +47,19 @@ hyuki@hyuki.com
     .       .
     .
 
-�e�f�B���N�g���̈Ӗ��́A���̂Ƃ���ł��B
+各ディレクトリの意味は、次のとおりです。
 
-    src/�p�^�[����/Sample      �T���v���v���O����
-    src/�p�^�[����/jucSample   �T���v���v���O����(���java.util.concurrent��p��������)
-    src/�p�^�[����/Q��...      ���K���ɓo�ꂷ�郊�X�g�i���͖��ԍ��j
-    src/�p�^�[����/A��...      �𓚂ɓo�ꂷ�郊�X�g�i���͖��ԍ��j
+    src/パターン名/Sample      サンプルプログラム
+    src/パターン名/jucSample   サンプルプログラム(主にjava.util.concurrentを用いたもの)
+    src/パターン名/Q☆...      練習問題に登場するリスト（☆は問題番号）
+    src/パターン名/A☆...      解答に登場するリスト（☆は問題番号）
 
 
-�����쌠�ƃ��C�Z���X
+■著作権とライセンス
 
-���̃A�[�J�C�u�Ɋ܂܂�Ă���t�@�C����
-�ȉ���The zlib/libpng License
-�ɏ]���Ď�舵���Ă��������B
+このアーカイブに含まれているファイルは
+以下のThe zlib/libpng License
+に従って取り扱ってください。
 
 Copyright (C) 2002,2006 Hiroshi Yuki.
 http://www.hyuki.com/dp/dp2.html
@@ -83,22 +83,22 @@ misrepresented as being the original software.
 
 3. This notice may not be removed or altered from any source distribution.
 
-�i�ȉ��A�Q�l��j
-���̃\�t�g�E�F�A�͌���̂܂ܒ񋟂������̂ł���A
-�����I�ɂ��邢�͈Öق̂����ɂǂ�ȕۏ؂����Ȃ��B
-���̃\�t�g�E�F�A���g�����Ƃɂ���Đ����邢���Ȃ鑹�Q�ɑ΂��Ă��A
-��҂͂܂������ӔC�𕉂�Ȃ��B
+（以下、参考訳）
+このソフトウェアは現状のまま提供されるものであり、
+明示的にあるいは暗黙のうちにどんな保証もしない。
+このソフトウェアを使うことによって生じるいかなる損害に対しても、
+作者はまったく責任を負わない。
 
-�ȉ��̐�����������ɂ����āA�N�ł����Ă��A
-���̃\�t�g�E�F�A�����p�A�v���P�[�V�������܂ޔC�ӂ̖ړI�Ɏg�p���邱�ƁA
-���̃\�t�g�E�F�A��ύX���邱�ƁA�����Ď��R�ɍĔz�z���邱�Ƃ��ł���B
+以下の制限を守る限りにおいて、誰であっても、
+このソフトウェアを商用アプリケーションを含む任意の目的に使用すること、
+このソフトウェアを変更すること、そして自由に再配布することができる。
 
-1. ���̃\�t�g�E�F�A�̋N��������Ē񎦂��Ă͂Ȃ�Ȃ��B���Ȃ킿�A
-���Ȃ��͌��̃\�t�g�E�F�A���������������Ǝ咣���Ă͂Ȃ�Ȃ��B
-���������̃\�t�g�E�F�A�𐻕i�̒��Ŏg�p����Ƃ��ɂ́A���i�̕�������
-�ӈӂ��������Ƃ͊��}����B����������͕K�{�ł͂Ȃ��B
+1. このソフトウェアの起源を誤って提示してはならない。すなわち、
+あなたは元のソフトウェアを自分が書いたと主張してはならない。
+もしもこのソフトウェアを製品の中で使用するときには、製品の文書中で
+謝意を示すことは歓迎する。しかしそれは必須ではない。
 
-2. �ύX�����\�[�X�̔ł͂͂�����Ƃ��ꂪ�킩��悤�ɂ��Ȃ���΂Ȃ炸�A
-���̃\�t�g�E�F�A�ƍ��������悤�ɂ��Ă͂����Ȃ��B
+2. 変更したソースの版ははっきりとそれがわかるようにしなければならず、
+元のソフトウェアと混同されるようにしてはいけない。
 
-3. �����Ȃ�\�[�X�z�z������A���̒��ӏ����͍폜������ύX�����肵�Ă͂Ȃ�Ȃ��B
+3. いかなるソース配布からも、この注意書きは削除したり変更したりしてはならない。

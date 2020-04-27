@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        Channel channel = new Channel(5);   // ワーカースレッドの個数
+        Channel channel = new Channel(5);   // 繝ｯ繝ｼ繧ｫ繝ｼ繧ｹ繝ｬ繝�繝峨�ｮ蛟区焚
         channel.startWorkers();
         ClientThread alice = new ClientThread("Alice", channel);
         ClientThread bobby = new ClientThread("Bobby", channel);

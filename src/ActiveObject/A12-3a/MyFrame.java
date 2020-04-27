@@ -45,27 +45,27 @@ public class MyFrame extends JFrame implements ActionListener {
         setVisible(true);
     }
 
-    // Searchƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚½‚Æ‚«
+    // Searchãƒœã‚¿ãƒ³ãŒæŠ¼ã•ã‚ŒãŸã¨ã
     public void actionPerformed(ActionEvent e) {
         searchWord(textfield.getText());
     }
 
-    // •\¦
+    // è¡¨ç¤º
     private void println(String line) {
         textarea.append(line + NEWLINE);
     }
 
-    // ŒŸõ
+    // æ¤œç´¢
     private void searchWord(final String word) {
-        // ŒŸõ‚ÌŒÄ‚Ño‚µ
+        // æ¤œç´¢ã®å‘¼ã³å‡ºã—
         final Result<String> result = activeObject.search(word);
         println("Searching " + word + "...");
-        // ŒŸõŒ‹‰Ê‚ğ‘Ò‚ÂƒXƒŒƒbƒh
+        // æ¤œç´¢çµæœã‚’å¾…ã¤ã‚¹ãƒ¬ãƒƒãƒ‰
         new Thread() {
             public void run() {
-                // Œ‹‰Ê‚ğ‘Ò‚Â
+                // çµæœã‚’å¾…ã¤
                 final String url = result.getResultValue();
-                // Œ‹‰Ê‚ª“¾‚ç‚ê‚½‚Ì‚ÅƒCƒxƒ“ƒgEƒfƒBƒXƒpƒbƒ`ƒ“ƒOEƒXƒŒƒbƒh‚É•\¦‚ğˆË—Š
+                // çµæœãŒå¾—ã‚‰ã‚ŒãŸã®ã§ã‚¤ãƒ™ãƒ³ãƒˆãƒ»ãƒ‡ã‚£ã‚¹ãƒ‘ãƒƒãƒãƒ³ã‚°ãƒ»ã‚¹ãƒ¬ãƒƒãƒ‰ã«è¡¨ç¤ºã‚’ä¾é ¼
                 SwingUtilities.invokeLater(
                     new Runnable() {
                         public void run() {

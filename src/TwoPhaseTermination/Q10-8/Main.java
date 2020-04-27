@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        // ƒXƒŒƒbƒh‚ğ¶¬‚·‚é
+        // ã‚¹ãƒ¬ãƒƒãƒ‰ã‚’ç”Ÿæˆã™ã‚‹
         Thread t = new Thread() {
             public void run() {
                 while (true) {
@@ -16,16 +16,16 @@ public class Main {
             }
         };
 
-        // ƒXƒŒƒbƒh‚ğ‹N“®‚·‚é
+        // ã‚¹ãƒ¬ãƒƒãƒ‰ã‚’èµ·å‹•ã™ã‚‹
         t.start();
 
-        // 5•b‘Ò‚Â
+        // 5ç§’å¾…ã¤
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
         }
 
-        // ƒXƒŒƒbƒh‚Éˆê“x‚¾‚¯interrupt‚ğ‚©‚¯‚é
+        // ã‚¹ãƒ¬ãƒƒãƒ‰ã«ä¸€åº¦ã ã‘interruptã‚’ã‹ã‘ã‚‹
         t.interrupt();
     }
 }

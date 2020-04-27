@@ -18,14 +18,14 @@ public class Main {
     public static void main(String[] args) {
         final Something obj = new Something();
 
-        // 書くスレッドA
+        // 譖ｸ縺上せ繝ｬ繝�繝陰
         new Thread() {
             public void run() {
                 obj.write();
             }
         }.start();
 
-        // 読むスレッドB
+        // 隱ｭ繧繧ｹ繝ｬ繝�繝隠
         new Thread() {
             public void run() {
                 obj.read();

@@ -45,26 +45,26 @@ public class MyFrame extends JFrame implements Display, ActionListener {
         setVisible(true);
     }
 
-    // Searchƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚½‚Æ‚«
+    // Searchãƒœã‚¿ãƒ³ãŒæŠ¼ã•ã‚ŒãŸã¨ã
     public void actionPerformed(ActionEvent e) {
         searchWord(textfield.getText());
     }
 
-    // •\¦
+    // è¡¨ç¤º
     private void println(String line) {
         textarea.append(line + NEWLINE);
     }
 
-    // ŒŸõ
+    // æ¤œç´¢
     private void searchWord(String word) {
-        // ŒŸõ‚ÌŒÄ‚Ño‚µ
+        // æ¤œç´¢ã®å‘¼ã³å‡ºã—
         searcher.search(word, this);
         println("Searching " + word + "...");
     }
 
-    // •\¦
+    // è¡¨ç¤º
     public void display(final String line) {
-        // ƒCƒxƒ“ƒgEƒfƒBƒXƒpƒbƒ`ƒ“ƒOEƒXƒŒƒbƒh‚É•\¦‚ğˆË—Š
+        // ã‚¤ãƒ™ãƒ³ãƒˆãƒ»ãƒ‡ã‚£ã‚¹ãƒ‘ãƒƒãƒãƒ³ã‚°ãƒ»ã‚¹ãƒ¬ãƒƒãƒ‰ã«è¡¨ç¤ºã‚’ä¾é ¼
         SwingUtilities.invokeLater(
             new Runnable() {
                 public void run() {

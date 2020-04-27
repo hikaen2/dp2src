@@ -5,13 +5,13 @@ public class Main {
             SecurityGate gate = new SecurityGate();
             CrackerThread[] t = new CrackerThread[5];
 
-            // CrackerThread‹N“®
+            // CrackerThreadèµ·å‹•
             for (int i = 0; i < t.length; i++) {
                 t[i] = new CrackerThread(gate);
                 t[i].start();
             }
 
-            // CrackerThreadI—¹‘Ò‚¿
+            // CrackerThreadçµ‚äº†å¾…ã¡
             for (int i = 0; i < t.length; i++) {
                 try {
                     t[i].join();
@@ -19,12 +19,12 @@ public class Main {
                 }
             }
 
-            // Šm”F
+            // ç¢ºèª
             if (gate.getCounter() == 0) {
-                // –µ‚‚µ‚Ä‚¢‚È‚¢
+                // çŸ›ç›¾ã—ã¦ã„ãªã„
                 System.out.print(".");
             } else {
-                // –µ‚‚ð”­Œ©‚µ‚½
+                // çŸ›ç›¾ã‚’ç™ºè¦‹ã—ãŸ
                 System.out.println("SecurityGate is NOT safe!");
                 System.out.println("getCounter() == " + gate.getCounter());
                 System.out.println("trial = " + trial);

@@ -9,8 +9,8 @@ public class SaverThread extends Thread {
     public void run() {
         try {
             while (true) {
-                data.save();            // ƒf[ƒ^‚ğ•Û‘¶‚µ‚æ‚¤‚Æ‚·‚é
-                Thread.sleep(1000);     // –ñ1•b‹x‚Ş
+                data.save();            // ãƒ‡ãƒ¼ã‚¿ã‚’ä¿å­˜ã—ã‚ˆã†ã¨ã™ã‚‹
+                Thread.sleep(1000);     // ç´„1ç§’ä¼‘ã‚€
             }
         } catch (IOException e) {
             e.printStackTrace();

@@ -3,7 +3,7 @@ import java.util.Random;
 public class MakerThread extends Thread {
     private final Random random;
     private final Table table;
-    private static int id = 0; // ƒP[ƒL‚Ì’Ê‚µ”Ô†(ƒRƒbƒN‚³‚ñ‘Sˆõ‹¤’Ê)
+    private static int id = 0; // ã‚±ãƒ¼ã‚­ã®é€šã—ç•ªå·(ã‚³ãƒƒã‚¯ã•ã‚“å…¨å“¡å…±é€š)
     public MakerThread(String name, Table table, long seed) {
         super(name);
         this.table = table;

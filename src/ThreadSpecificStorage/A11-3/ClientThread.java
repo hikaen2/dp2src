@@ -11,7 +11,7 @@ public class ClientThread extends Thread {
             } catch (InterruptedException e) {
             }
         }
-        // Log.close() ÇÕÇ‡Ç§ïsóv
+        // Log.close() „ÅØ„ÇÇ„ÅÜ‰∏çË¶Å
         System.out.println(getName() + " END");
     }
 }

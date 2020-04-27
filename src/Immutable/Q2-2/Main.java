@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
         String s = "BAT";
-        System.out.println(s.replace('B', 'C')); // 'B'‚ğ'C'‚É’uŠ·
+        System.out.println(s.replace('B', 'C')); // 'B'ã‚’'C'ã«ç½®æ›
     }
 }

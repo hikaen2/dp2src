@@ -4,28 +4,28 @@ public class Blackhole {
         magic(obj);
         System.out.println("Step 2");
         synchronized (obj) {
-            System.out.println("Step 3 (never reached here)");  // ‚±‚±‚É‚Í‚±‚È‚¢
+            System.out.println("Step 3 (never reached here)");  // ã“ã“ã«ã¯ã“ãªã„
         }
     }
     public static void magic(final Object obj) {
-        // thread‚ÍAobj‚ÌƒƒbƒN‚ğæ‚Á‚Ä‚©‚ç©•ª©g‚ÌI—¹‚ğ‰i‰“‚É‘Ò‚ÂƒXƒŒƒbƒh
+        // threadã¯ã€objã®ãƒ­ãƒƒã‚¯ã‚’å–ã£ã¦ã‹ã‚‰è‡ªåˆ†è‡ªèº«ã®çµ‚äº†ã‚’æ°¸é ã«å¾…ã¤ã‚¹ãƒ¬ãƒƒãƒ‰
         Thread thread = new Thread() {
             public void run() {
-                synchronized (obj) {        // ‚±‚±‚Åobj‚ÌƒƒbƒN‚ğæ‚é
+                synchronized (obj) {        // ã“ã“ã§objã®ãƒ­ãƒƒã‚¯ã‚’å–ã‚‹
                     synchronized (this) {
-                        this.notifyAll();   // obj‚ÌƒƒbƒN‚ğæ‚Á‚½‚±‚Æ‚ğ’Ê’m
+                        this.notifyAll();   // objã®ãƒ­ãƒƒã‚¯ã‚’å–ã£ãŸã“ã¨ã‚’é€šçŸ¥
                     }
                     try {
-                        this.join(); // ‰i‰“‚É‘Ò‚Â‚±‚Æ‚É‚È‚é
+                        this.join(); // æ°¸é ã«å¾…ã¤ã“ã¨ã«ãªã‚‹
                     } catch (InterruptedException e) {
                     }
                 }
             }
         };
         synchronized (thread) {
-            thread.start();     // ƒXƒŒƒbƒh‚Ì‹N“®
+            thread.start();     // ã‚¹ãƒ¬ãƒƒãƒ‰ã®èµ·å‹•
             try {
-                thread.wait();  // V‚µ‚¢ƒXƒŒƒbƒh‚ªobj‚ÌƒƒbƒN‚ğæ‚é‚Ì‚ğ‘Ò‚Â
+                thread.wait();  // æ–°ã—ã„ã‚¹ãƒ¬ãƒƒãƒ‰ãŒobjã®ãƒ­ãƒƒã‚¯ã‚’å–ã‚‹ã®ã‚’å¾…ã¤
             } catch (InterruptedException e) {
             }
         }

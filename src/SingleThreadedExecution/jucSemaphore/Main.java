@@ -8,19 +8,19 @@ class Log {
     }
 }
 
-// ”‚Ì§ŒÀ‚ª‚ ‚éƒŠƒ\[ƒX
+// æ•°ã®åˆ¶é™ãŒã‚ã‚‹ãƒªã‚½ãƒ¼ã‚¹
 class BoundedResource {
     private final Semaphore semaphore;
     private final int permits;
     private final static Random random = new Random(314159);
 
-    // ƒRƒ“ƒXƒgƒ‰ƒNƒ^(permits‚ÍƒŠƒ\[ƒX‚ÌŒÂ”)
+    // ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿(permitsã¯ãƒªã‚½ãƒ¼ã‚¹ã®å€‹æ•°)
     public BoundedResource(int permits) {
         this.semaphore = new Semaphore(permits);
         this.permits = permits;
     }
 
-    // ƒŠƒ\[ƒX‚ğg—p‚·‚é
+    // ãƒªã‚½ãƒ¼ã‚¹ã‚’ä½¿ç”¨ã™ã‚‹
     public void use() throws InterruptedException {
         semaphore.acquire();
         try {
@@ -30,7 +30,7 @@ class BoundedResource {
         }
     }
 
-    // ƒŠƒ\[ƒX‚ğÀÛ‚Ég—p‚·‚é(‚±‚±‚Å‚ÍThread.sleep‚µ‚Ä‚¢‚é‚¾‚¯)
+    // ãƒªã‚½ãƒ¼ã‚¹ã‚’å®Ÿéš›ã«ä½¿ç”¨ã™ã‚‹(ã“ã“ã§ã¯Thread.sleepã—ã¦ã„ã‚‹ã ã‘)
     protected void doUse() throws InterruptedException {
         Log.println("BEGIN: used = " + (permits - semaphore.availablePermits()));
         Thread.sleep(random.nextInt(500));
@@ -38,7 +38,7 @@ class BoundedResource {
     }
 }
 
-// ƒŠƒ\[ƒX‚ğ—˜—p‚·‚éƒXƒŒƒbƒh
+// ãƒªã‚½ãƒ¼ã‚¹ã‚’åˆ©ç”¨ã™ã‚‹ã‚¹ãƒ¬ãƒƒãƒ‰
 class UserThread extends Thread {
     private final static Random random = new Random(26535);
     private final BoundedResource resource;
@@ -60,10 +60,10 @@ class UserThread extends Thread {
 
 public class Main {
     public static void main(String[] args) {
-        // 3ŒÂ‚ÌƒŠƒ\[ƒX‚ğ—pˆÓ‚·‚é
+        // 3å€‹ã®ãƒªã‚½ãƒ¼ã‚¹ã‚’ç”¨æ„ã™ã‚‹
         BoundedResource resource = new BoundedResource(3);
 
-        // 10ŒÂ‚ÌƒXƒŒƒbƒh‚ª—˜—p‚·‚é
+        // 10å€‹ã®ã‚¹ãƒ¬ãƒƒãƒ‰ãŒåˆ©ç”¨ã™ã‚‹
         for (int i = 0; i < 10; i++) {
             new UserThread(resource).start();
         }

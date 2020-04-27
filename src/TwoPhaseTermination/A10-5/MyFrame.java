@@ -23,10 +23,10 @@ public class MyFrame extends JFrame implements ActionListener {
     }
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == executeButton) {
-            // ƒT[ƒrƒXÀsŠJn
+            // ã‚µãƒ¼ãƒ“ã‚¹å®Ÿè¡Œé–‹å§‹
             Service.service();
         } else if (e.getSource() == cancelButton) {
-            // ƒT[ƒrƒX’†~
+            // ã‚µãƒ¼ãƒ“ã‚¹ä¸­æ­¢
             Service.cancel();
         }
     }

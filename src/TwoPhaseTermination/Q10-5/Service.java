@@ -1,5 +1,5 @@
 public class Service {
-    // ƒT[ƒrƒXÀsŠJn
+    // ã‚µãƒ¼ãƒ“ã‚¹å®Ÿè¡Œé–‹å§‹
     public static void service() {
         System.out.print("service");
         for (int i = 0; i < 50; i++) {
@@ -12,8 +12,8 @@ public class Service {
         System.out.println("done.");
     }
 
-    // ƒT[ƒrƒX’†~
+    // ã‚µãƒ¼ãƒ“ã‚¹ä¸­æ­¢
     public static void cancel() {
-        // –¢À‘•
+        // æœªå®Ÿè£…
     }
 }

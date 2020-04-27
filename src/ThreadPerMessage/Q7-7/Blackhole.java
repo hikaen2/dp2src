@@ -4,10 +4,10 @@ public class Blackhole {
         magic(obj);
         System.out.println("Step 2");
         synchronized (obj) {
-            System.out.println("Step 3 (never reached here)");  // ‚±‚±‚É‚Í‚±‚È‚¢
+            System.out.println("Step 3 (never reached here)");  // ã“ã“ã«ã¯ã“ãªã„
         }
     }
 
-iˆÈ‰ºAmagicƒƒ\ƒbƒh‚ğŠ®¬‚³‚¹‚Ä‚­‚¾‚³‚¢j
+ï¼ˆä»¥ä¸‹ã€magicãƒ¡ã‚½ãƒƒãƒ‰ã‚’å®Œæˆã•ã›ã¦ãã ã•ã„ï¼‰
 
 }

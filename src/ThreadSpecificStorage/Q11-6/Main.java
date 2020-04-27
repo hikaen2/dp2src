@@ -4,18 +4,18 @@ import java.util.concurrent.ExecutorService;
 public class Main {
     private static final int TASKS = 10;
     public static void main(String[] args) {
-        // Às‚·‚éƒT[ƒrƒX
+        // å®Ÿè¡Œã™ã‚‹ã‚µãƒ¼ãƒ“ã‚¹
         ExecutorService service = Executors.newFixedThreadPool(3);
         try {
             for (int t = 0; t < TASKS; t++) {
-                // ƒƒO‚É‘‚«‚Şƒ^ƒXƒN
+                // ãƒ­ã‚°ã«æ›¸ãè¾¼ã‚€ã‚¿ã‚¹ã‚¯
                 Runnable printTask = new Runnable() {
                     public void run() {
                         Log.println("Hello!");
                         Log.close();
                     }
                 };
-                // ƒ^ƒXƒN‚ÌÀs
+                // ã‚¿ã‚¹ã‚¯ã®å®Ÿè¡Œ
                 service.execute(printTask);
             }
         } finally {

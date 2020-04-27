@@ -1,16 +1,16 @@
 public final class ReadWriteLock {
-    private int readingReaders = 0; // (a) ÀÛ‚É“Ç‚ñ‚Å‚¢‚éƒXƒŒƒbƒh‚Ì”
-    private int writingWriters = 0; // (b) ÀÛ‚É‘‚¢‚Ä‚¢‚éƒXƒŒƒbƒh‚Ì”
+    private int readingReaders = 0; // (a) å®Ÿéš›ã«èª­ã‚“ã§ã„ã‚‹ã‚¹ãƒ¬ãƒƒãƒ‰ã®æ•°
+    private int writingWriters = 0; // (b) å®Ÿéš›ã«æ›¸ã„ã¦ã„ã‚‹ã‚¹ãƒ¬ãƒƒãƒ‰ã®æ•°
 
     public synchronized void readLock() throws InterruptedException {
         while (writingWriters > 0) {
             wait();
         }
-        readingReaders++;                       // (a) ÀÛ‚É“Ç‚ñ‚Å‚¢‚éƒXƒŒƒbƒh‚Ì”‚ğ1‘‚â‚·
+        readingReaders++;                       // (a) å®Ÿéš›ã«èª­ã‚“ã§ã„ã‚‹ã‚¹ãƒ¬ãƒƒãƒ‰ã®æ•°ã‚’1å¢—ã‚„ã™
     }
 
     public synchronized void readUnlock() {
-        readingReaders--;                       // (a) ÀÛ‚É“Ç‚ñ‚Å‚¢‚éƒXƒŒƒbƒh‚Ì”‚ğ1Œ¸‚ç‚·
+        readingReaders--;                       // (a) å®Ÿéš›ã«èª­ã‚“ã§ã„ã‚‹ã‚¹ãƒ¬ãƒƒãƒ‰ã®æ•°ã‚’1æ¸›ã‚‰ã™
         notifyAll();
     }
 
@@ -18,11 +18,11 @@ public final class ReadWriteLock {
         while (readingReaders > 0 || writingWriters > 0) {
             wait();
         }
-        writingWriters++;                       // (b) ÀÛ‚É‘‚¢‚Ä‚¢‚éƒXƒŒƒbƒh‚Ì”‚ğ1‘‚â‚·
+        writingWriters++;                       // (b) å®Ÿéš›ã«æ›¸ã„ã¦ã„ã‚‹ã‚¹ãƒ¬ãƒƒãƒ‰ã®æ•°ã‚’1å¢—ã‚„ã™
     }
 
     public synchronized void writeUnlock() {
-        writingWriters--;                       // (b) ÀÛ‚É‘‚¢‚Ä‚¢‚éƒXƒŒƒbƒh‚Ì”‚ğ1Œ¸‚ç‚·
+        writingWriters--;                       // (b) å®Ÿéš›ã«æ›¸ã„ã¦ã„ã‚‹ã‚¹ãƒ¬ãƒƒãƒ‰ã®æ•°ã‚’1æ¸›ã‚‰ã™
         notifyAll();
     }
 }

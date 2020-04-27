@@ -8,6 +8,6 @@ public class Something {
         initialized = true;
     }
     private void doInit() {
-        // ÀÛ‚Ì‰Šú‰»ˆ—
+        // å®Ÿéš›ã®åˆæœŸåŒ–å‡¦ç†
     }
 }

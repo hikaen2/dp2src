@@ -1,8 +1,8 @@
 public class Table {
     private final String[] buffer;
-    private int tail;  // Ÿ‚Éput‚·‚éêŠ
-    private int head;  // Ÿ‚Étake‚·‚éêŠ
-    private int count; // buffer“à‚ÌƒP[ƒL”
+    private int tail;  // æ¬¡ã«putã™ã‚‹å ´æ‰€
+    private int head;  // æ¬¡ã«takeã™ã‚‹å ´æ‰€
+    private int count; // bufferå†…ã®ã‚±ãƒ¼ã‚­æ•°
     public Table(int count) {
         this.buffer = new String[count];
         this.head = 0;

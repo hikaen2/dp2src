@@ -2,25 +2,25 @@ public class Main {
     public static void main(String[] args) {
         Database<String,String> database  = new Database<String,String>();
 
-        // AssignThreadƒXƒŒƒbƒh‚Ì‹N“®
+        // AssignThreadã‚¹ãƒ¬ãƒƒãƒ‰ã®èµ·å‹•
         new AssignThread(database, "Alice", "Alaska").start();
         new AssignThread(database, "Alice", "Australia").start();
         new AssignThread(database, "Bobby", "Brazil").start();
         new AssignThread(database, "Bobby", "Bulgaria").start();
 
-        // RetrieveThreadƒXƒŒƒbƒh‚Ì‹N“®
+        // RetrieveThreadã‚¹ãƒ¬ãƒƒãƒ‰ã®èµ·å‹•
         for (int i = 0; i < 100; i++) {
             new RetrieveThread(database, "Alice").start();
             new RetrieveThread(database, "Bobby").start();
         }
 
-        // –ñ10•bŠÔ’â~
+        // ç´„10ç§’é–“åœæ­¢
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {
         }
 
-        // ‹­§I—¹
+        // å¼·åˆ¶çµ‚äº†
         System.exit(0);
     }
 }

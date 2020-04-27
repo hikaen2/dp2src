@@ -1,8 +1,8 @@
 public class CountupThread extends GracefulThread {
-    // カウンタの値
+    // 繧ｫ繧ｦ繝ｳ繧ｿ縺ｮ蛟､
     private long counter = 0;
 
-    // 作業
+    // 菴懈･ｭ
     @Override
     protected void doWork() throws InterruptedException {
         counter++;
@@ -10,7 +10,7 @@ public class CountupThread extends GracefulThread {
         Thread.sleep(500);
     }
 
-    // 終了処理
+    // 邨ゆｺ�蜃ｦ逅�
     @Override
     protected void doShutdown() {
         System.out.println("doShutdown: counter = " + counter);

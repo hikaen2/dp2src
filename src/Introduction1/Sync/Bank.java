@@ -7,18 +7,18 @@ public class Bank {
         this.money = money;
     }
 
-    // —a‹à‚·‚é
+    // é é‡‘ã™ã‚‹
     public synchronized void deposit(int m) {
         money += m;
     }
 
-    // ˆø‚«o‚·
+    // å¼•ãå‡ºã™
     public synchronized boolean withdraw(int m) {
         if (money >= m) {
             money -= m;
-            return true;    // ˆø‚«o‚¹‚½
+            return true;    // å¼•ãå‡ºã›ãŸ
         } else {
-            return false;   // c‚•s‘«
+            return false;   // æ®‹é«˜ä¸è¶³
         }
     }
 

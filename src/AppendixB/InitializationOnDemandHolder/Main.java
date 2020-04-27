@@ -1,13 +1,13 @@
 public class Main {
     public static void main(String[] args) {
-        // スレッドA
+        // 繧ｹ繝ｬ繝�繝陰
         new Thread() {
             public void run() {
                 System.out.println(MySystem.getInstance().getDate());
             }
         }.start();
 
-        // スレッドB
+        // 繧ｹ繝ｬ繝�繝隠
         new Thread() {
             public void run() {
                 System.out.println(MySystem.getInstance().getDate());

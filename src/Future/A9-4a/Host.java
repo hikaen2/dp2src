@@ -2,10 +2,10 @@ public class Host {
     public Data request(final int count, final char c) {
         System.out.println("    request(" + count + ", " + c + ") BEGIN");
 
-        // (1) FutureData‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ğì‚é
+        // (1) FutureDataã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ä½œã‚‹
         final FutureData future = new FutureData();
 
-        // (2) RealData‚ğì‚é‚½‚ß‚ÌV‚µ‚¢ƒXƒŒƒbƒh‚ğ‹N“®‚·‚é
+        // (2) RealDataã‚’ä½œã‚‹ãŸã‚ã®æ–°ã—ã„ã‚¹ãƒ¬ãƒƒãƒ‰ã‚’èµ·å‹•ã™ã‚‹
         new Thread() {
             public void run() {
                 try {
@@ -19,7 +19,7 @@ public class Host {
 
         System.out.println("    request(" + count + ", " + c + ") END");
 
-        // (3) FutureData‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ğ–ß‚è’l‚Æ‚·‚é
+        // (3) FutureDataã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’æˆ»ã‚Šå€¤ã¨ã™ã‚‹
         return future;
     }
 }

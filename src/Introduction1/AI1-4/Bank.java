@@ -22,7 +22,7 @@ public class Bank {
     }
     private void check() {
         if (money < 0) {
-            System.out.println("—a‹àŽc‚‚ªƒ}ƒCƒiƒX‚Å‚·! money = " + money);
+            System.out.println("é é‡‘æ®‹é«˜ãŒãƒžã‚¤ãƒŠã‚¹ã§ã™! money = " + money);
         }
     }
 }

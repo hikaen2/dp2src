@@ -1,19 +1,19 @@
 public class Main {
     public static void main(String[] args) {
-        // ƒXƒŒƒbƒh‚ğ‹N“®‚·‚é
+        // ã‚¹ãƒ¬ãƒƒãƒ‰ã‚’èµ·å‹•ã™ã‚‹
         RequestQueue requestQueue = new RequestQueue();
         Thread alice = new ClientThread(requestQueue, "Alice", 314159L);
         Thread bobby = new ServerThread(requestQueue, "Bobby", 265358L);
         alice.start();
         bobby.start();
 
-        // –ñ10•b‘Ò‚Â
+        // ç´„10ç§’å¾…ã¤
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {
         }
 
-        // interruptƒƒ\ƒbƒh‚ğŒÄ‚Ô
+        // interruptãƒ¡ã‚½ãƒƒãƒ‰ã‚’å‘¼ã¶
         System.out.println("***** calling interrupt *****");
         alice.interrupt();
         bobby.interrupt();

@@ -1,36 +1,36 @@
 public final class ReadWriteLock {
-    private int readingReaders = 0; // (A) ÀÛ‚É“Ç‚ñ‚Å‚¢‚éÅ’†‚ÌƒXƒŒƒbƒh‚Ì”
-    private int waitingWriters = 0; // (B) ‘‚­‚Ì‚ğ‘Ò‚Á‚Ä‚¢‚éƒXƒŒƒbƒh‚Ì”
-    private int writingWriters = 0; // (C) ÀÛ‚É‘‚¢‚Ä‚¢‚éÅ’†‚ÌƒXƒŒƒbƒh‚Ì”
-    private boolean preferWriter = true; // ‘‚­‚Ì‚ğ—Dæ‚·‚é‚È‚çtrue
+    private int readingReaders = 0; // (A) å®Ÿéš›ã«èª­ã‚“ã§ã„ã‚‹æœ€ä¸­ã®ã‚¹ãƒ¬ãƒƒãƒ‰ã®æ•°
+    private int waitingWriters = 0; // (B) æ›¸ãã®ã‚’å¾…ã£ã¦ã„ã‚‹ã‚¹ãƒ¬ãƒƒãƒ‰ã®æ•°
+    private int writingWriters = 0; // (C) å®Ÿéš›ã«æ›¸ã„ã¦ã„ã‚‹æœ€ä¸­ã®ã‚¹ãƒ¬ãƒƒãƒ‰ã®æ•°
+    private boolean preferWriter = true; // æ›¸ãã®ã‚’å„ªå…ˆã™ã‚‹ãªã‚‰true
 
     public synchronized void readLock() throws InterruptedException {
         while (writingWriters > 0 || (preferWriter && waitingWriters > 0)) {
             wait();
         }
-        readingReaders++;                       // (A) ÀÛ‚É“Ç‚ñ‚Å‚¢‚éƒXƒŒƒbƒh‚Ì”‚ğ1‘‚â‚·
+        readingReaders++;                       // (A) å®Ÿéš›ã«èª­ã‚“ã§ã„ã‚‹ã‚¹ãƒ¬ãƒƒãƒ‰ã®æ•°ã‚’1å¢—ã‚„ã™
     }
 
     public synchronized void readUnlock() {
-        readingReaders--;                       // (A) ÀÛ‚É“Ç‚ñ‚Å‚¢‚éƒXƒŒƒbƒh‚Ì”‚ğ1Œ¸‚ç‚·
+        readingReaders--;                       // (A) å®Ÿéš›ã«èª­ã‚“ã§ã„ã‚‹ã‚¹ãƒ¬ãƒƒãƒ‰ã®æ•°ã‚’1æ¸›ã‚‰ã™
         preferWriter = true;
         notifyAll();
     }
 
     public synchronized void writeLock() throws InterruptedException {
-        waitingWriters++;                       // (B) ‘‚­‚Ì‚ğ‘Ò‚Á‚Ä‚¢‚éƒXƒŒƒbƒh‚Ì”‚ğ1‘‚â‚·
+        waitingWriters++;                       // (B) æ›¸ãã®ã‚’å¾…ã£ã¦ã„ã‚‹ã‚¹ãƒ¬ãƒƒãƒ‰ã®æ•°ã‚’1å¢—ã‚„ã™
         try {
             while (readingReaders > 0 || writingWriters > 0) {
                 wait();
             }
         } finally {
-            waitingWriters--;                   // (B) ‘‚­‚Ì‚ğ‘Ò‚Á‚Ä‚¢‚éƒXƒŒƒbƒh‚Ì”‚ğ1Œ¸‚ç‚·
+            waitingWriters--;                   // (B) æ›¸ãã®ã‚’å¾…ã£ã¦ã„ã‚‹ã‚¹ãƒ¬ãƒƒãƒ‰ã®æ•°ã‚’1æ¸›ã‚‰ã™
         }
-        writingWriters++;                       // (C) ÀÛ‚É‘‚¢‚Ä‚¢‚éƒXƒŒƒbƒh‚Ì”‚ğ1‘‚â‚·
+        writingWriters++;                       // (C) å®Ÿéš›ã«æ›¸ã„ã¦ã„ã‚‹ã‚¹ãƒ¬ãƒƒãƒ‰ã®æ•°ã‚’1å¢—ã‚„ã™
     }
 
     public synchronized void writeUnlock() {
-        writingWriters--;                       // (C) ÀÛ‚É‘‚¢‚Ä‚¢‚éƒXƒŒƒbƒh‚Ì”‚ğ1Œ¸‚ç‚·
+        writingWriters--;                       // (C) å®Ÿéš›ã«æ›¸ã„ã¦ã„ã‚‹ã‚¹ãƒ¬ãƒƒãƒ‰ã®æ•°ã‚’1æ¸›ã‚‰ã™
         preferWriter = false;
         notifyAll();
     }
